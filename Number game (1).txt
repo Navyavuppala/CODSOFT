@@ -1,0 +1,48 @@
+package Game;
+import java.util.*;
+public class NumberGussingGame {
+
+	public static void main(String args[]) {
+		
+		Random a= new Random();
+		
+		int Number = a.nextInt(100) + 1;
+		//System.out.println("Random Number is" + Number);
+		int score = 0;
+		while(score < 5){
+			
+		System.out.println("Enter any Number (1-100):");
+		
+		Scanner b = new Scanner(System.in);
+		int Guess = b.nextInt();
+		score++;
+		if (Guess == Number) {
+			System.out.println("Correct! You win");
+			System.out.print("Number of tries " +score); System.out.println("");
+			System.out.println("Your Score is :" +score);
+			break;
+		}
+		else if (Guess > Number) {
+			System.out.println("Too high! Guess lower..");
+			System.out.println("");
+		}
+		else if (Guess < Number) {
+			System.out.println("Too low! Guess higher.. ");
+			System.out.println("");
+		}
+		else {
+            System.out.println("Congratulations! You guessed the number in " + score + " guesses.");
+            break;
+        }
+		 if (score < 5) {
+             System.out.println("You have " + (5 - score) + " guesses remaining.");
+             System.out.println("");
+         } else {
+             System.out.println("Sorry, you've run out of guesses. The number was: " + Number);
+     }
+
+	}
+		//b.close();
+}
+}
+
