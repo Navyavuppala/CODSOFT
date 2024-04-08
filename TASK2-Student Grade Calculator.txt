@@ -1,0 +1,48 @@
+package Gopi;
+import java.util.Scanner;
+
+public class Grade {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize variables
+        int numTests;
+        double totalScore = 0;
+
+        // Prompt the user for the number of tests
+        System.out.print("Enter the number of tests: ");
+        numTests = scanner.nextInt();
+
+        // Prompt the user for test scores and calculate total score
+        for (int i = 1; i <= numTests; i++) {
+            System.out.print("Enter score for test " + i + ": ");
+            double score = scanner.nextDouble();
+            totalScore += score;
+        }
+
+        // Calculate the average score
+        double averageScore = totalScore / numTests;
+
+        // Determine the letter grade
+        char letterGrade;
+        if (averageScore >= 90) {
+            letterGrade = 'A';
+        } else if (averageScore >= 80) {
+            letterGrade = 'B';
+        } else if (averageScore >= 70) {
+            letterGrade = 'C';
+        } else if (averageScore >= 60) {
+            letterGrade = 'D';
+        } else {
+            letterGrade = 'F';
+        }
+
+        // Display the results
+        System.out.println("Average Score: " + averageScore);
+        System.out.println("Letter Grade: " + letterGrade);
+
+        // Close the Scanner
+        scanner.close();
+    }
+}
