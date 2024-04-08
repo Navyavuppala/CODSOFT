@@ -1,4 +1,4 @@
-package Gopi;
+package Navya;
 import java.util.Scanner;
 
 public class Grade {
